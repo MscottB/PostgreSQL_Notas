@@ -238,10 +238,11 @@ alter table nombreTabla add primary key(idNombreTabla);
 >En el diseño de bases de datos relacionales, se llama clave principal a un campo o a una combinación de campos que identifica de forma **única** a cada fila de una tabla. Una clave primaria comprende de esta manera una columna o conjunto de columnas.
 
 >Los datos ingresados en el campo asignado con **primary key** son unicos y no puede existir dos numeros identicos o duplicados.
->
+
 >**Lo que esta en la siguiente tabla no es posible.**
+>
 >| ID | Campo1 |
->|:--:|:------:|
+>|:------:|:------:|
 >| 22 | XXXXXX |
 >| 22 | XXXXXX | 
 
@@ -256,12 +257,12 @@ create table nombreTabla (
 	campoEjemplo varchar(10)
 );
 ```
-
 Ejemplo:
-| ID | Dato |
-|:--:|:----:|
-| 1  |  X   |
-| 2  |  X   |
+
+| ID | Dato1 | Dato2 |
+|:----:|:----:|:----:|
+|1|X|X|
+|2|X|X|
 
 * **Datos Extras**
 
@@ -491,8 +492,9 @@ group by nombreColumna1, nombreColumna2
 * Ejemplo:
 
 **Tabla Base**
+
 |nombre|identificacion|salario|
-|:--:|:--:|:--:|
+|:---:|:---:|:---:|
 |trabajador1|1|2500|
 |trabajador2|2|4500|
 |trabajador3|3|3500|
@@ -504,8 +506,9 @@ select nombre, max(salario)as maximo, min(salario)as minimo from planilla group 
 ```
 
 **Resultado**
+
 |nombre|maximo|minimo|
-|:--:|:--:|:--:|
+|:---:|:---:|:---:|
 |trabajador1|5500|2500|
 |trabajador2|4500|4500|
 |trabajador3|3500|3500|
@@ -662,6 +665,7 @@ Ejecucion de la funcion:
 select Suma ('33','66');
 ```
 Resultado
+
 |Suma|
 |:-:|
 | 99 |
@@ -1068,6 +1072,7 @@ Valor absoluto de un argumento(Numero).
 select abs(-50)
 ```
 Salida:
+
 |abs|
 |:--:|
 |50|
@@ -1078,6 +1083,7 @@ Retornar raiz cubica de un numero.
 select cbrt(27)
 ```
 Salida:
+
 |cbrt|
 |:--:|
 |3|
@@ -1088,6 +1094,7 @@ Redondear Numero al valor siguiente.
 select ceiling(9.22)
 ```
 Salida:
+
 |ceiling|
 |:--:|
 |10|
@@ -1099,6 +1106,7 @@ Redondear numero al valor anterior.
 select floor(9.22)
 ```
 Salida:
+
 |floor|
 |:--:|
 |9|
@@ -1114,6 +1122,7 @@ Y: es el numero por el cual se va a aumentar la potencia.
 select power(4,4)
 ```
 Salida:
+
 |power|
 |:--:|
 |256|
@@ -1131,6 +1140,7 @@ D: es el numero de decimales que se desea.
 select round(15.55);
 ```
 Salida:
+
 |round|
 |:--:|
 |15|
@@ -1140,6 +1150,7 @@ Salida:
 select round(15.5555, 2);
 ```
 Salida:
+
 |round|
 |:--:|
 |15.56|
@@ -1157,6 +1168,7 @@ Cero: 0
 select sign(5);
 ```
 Salida:
+
 |sign|
 |:--:|
 |1|
@@ -1165,6 +1177,7 @@ Salida:
 select sign(-5);
 ```
 Salida:
+
 |sign|
 |:--:|
 |-1|
@@ -1173,6 +1186,7 @@ Salida:
 select sign(0);
 ```
 Salida:
+
 |sign|
 |:--:|
 |0|
@@ -1184,6 +1198,7 @@ Sirve para entregar la raiz cuadrada, de un numero.
 select sqrt(64);
 ```
 Salida:
+
 |sqrt|
 |:--:|
 |8|
@@ -1197,6 +1212,7 @@ Entrega el resto de una division.
 select Mod(33,2);
 ```
 Salida:
+
 |mod|
 |:--:|
 |1|
@@ -1208,6 +1224,7 @@ Entrega el numero pi.
 select Pi();
 ```
 Salida:
+
 |pi|
 |:--:|
 |3.14159265358979|
@@ -1219,6 +1236,7 @@ Entrega numeros aleatorios entre 0 y 1.
 select Random();
 ```
 Salida:
+
 |random|
 |:--:|
 |0.227234418038279|
@@ -1230,6 +1248,7 @@ Entrega el numero entero.
 select Trunc(-24.336699);
 ```
 Salida:
+
 |trunc|
 |:--:|
 |-24|
@@ -1239,6 +1258,7 @@ Tambien es posible especificar la cantidad de decimales que debe entregar.
 select Trunc(-24.336699, 3);
 ```
 Salida:
+
 |trunc|
 |:--:|
 |-24.336|
@@ -1252,6 +1272,7 @@ Sirve para realizar un conteo de los caracteres en la palafra y/o frase que se l
 select char_length('Planeta Tierra');
 ```
 Salida:
+
 |cher_length|
 |:--:|
 |14|
@@ -1263,6 +1284,7 @@ Sirve para pasar el texto completo a mayuscula.
 select Upper('Planeta Tierra');
 ```
 Salida:
+
 |upper|
 |:--:|
 |PLANETA TIERRA|
@@ -1273,6 +1295,7 @@ Sirve para pasar el texto completo a minuscula.
 select Lower('Planeta Tierra');
 ```
 Salida:
+
 |lower|
 |:--:|
 |planeta tierra|
@@ -1286,6 +1309,7 @@ Position es sensible a mayusculas o minusculas.
 select position('Planeta'in 'Planeta Tierra');
 ```
 Salida:
+
 |position|
 |:--:|
 |1|
@@ -1294,6 +1318,7 @@ Salida:
 select position('Tierra'in 'Planeta Tierra');
 ```
 Salida:
+
 |position|
 |:--:|
 |9|
@@ -1314,6 +1339,7 @@ Ejemplo:
 select substring ('Planeta Tierra' from 2 for 6);
 ```
 Salida:
+
 |substring|
 |:--:|
 |laneta|
@@ -1328,6 +1354,7 @@ La opcion por default permite eliminar caracteres(solo espacios en blanco) al pr
 select trim (' Planeta Tierra ');
 ```
 Salida:
+
 |trim|
 |:--:|
 |Planeta Tierra|
@@ -1339,6 +1366,7 @@ Permite eliminar caracteres al principio de una cadena(texto).
 select trim (leading '-' from '--Planeta Tierra--');
 ```
 Salida:
+
 |ltrim|
 |:--:|
 |Planeta Tierra--|
@@ -1350,6 +1378,7 @@ Permite eliminar caracteres al final de una cadena(texto).
 select trim (leading '-' from '--Planeta Tierra--');
 ```
 Salida:
+
 |rtrim|
 |:--:|
 |--Planeta Tierra|
@@ -1362,6 +1391,7 @@ Permite eliminar caracteres al principio y al final de una cadena(texto).
 select trim (leading '-' from '--Planeta Tierra--');
 ```
 Salida:
+
 |btrim|
 |:--:|
 |Planeta Tierra|
@@ -1377,6 +1407,7 @@ Elimina el texto o caracteres que se le indiquen del  lado izquierdo.
 select ltrim ('   Planeta Tierra');
 ```
 Salida:
+
 |ltrim|
 |:--:|
 |Planeta Tierra|
@@ -1387,6 +1418,7 @@ Salida:
 select ltrim ('***Planeta Tierra***', '*');
 ```
 Salida:
+
 |ltrim|
 |:--:|
 |Planeta Tierra***|
@@ -1399,6 +1431,7 @@ Elimina texto o caracteres que se le indique del lado derecho.
 select rtrim ('***Planeta Tierra***', '*');
 ```
 Salida:
+
 |rtrim|
 |:--:|
 |***Planeta Tierra|
@@ -1412,6 +1445,7 @@ Muestra los caracteres que se le indiquen.
 select substr('Planeta Tierra', 5);
 ```
 Salida:
+
 |substr|
 |:--:|
 |eta Tierra|
@@ -1421,6 +1455,7 @@ Salida:
 select substr('Planeta Tierra', 5, 8);
 ```
 Salida:
+
 |substr|
 |:--:|
 |eta Tier|
@@ -1435,6 +1470,7 @@ Por lo tanto primero contara los caracteres existentes y despues agregará los f
 select lpad('Planeta Tierra',16,'*');
 ```
 Salida:
+
 |lpad|
 |:--:|
 |**Planeta Tierra|
@@ -1447,6 +1483,7 @@ Lo mismo que el **LPAD** pero del lado derecho.
 select rpad('Planeta Tierra',16,'*');
 ```
 Salida:
+
 |rpad|
 |:--:|
 |Planeta Tierra**|
@@ -1459,6 +1496,7 @@ Para saber fecha actual
 select current_date;
 ```
 Salida:
+
 |current_date|
 |:--:|
 |2019-02-24|
@@ -1469,6 +1507,7 @@ Para saber Hora actual y zona horaria.
 select current_time;
 ```
 Salida:
+
 |current_time|
 |:--:|
 |21:47:53.611545-03:00|
@@ -1480,6 +1519,7 @@ Entrega fecha actual, hora actual y zona horaria.
 select current_timestamp;
 ```
 Salida:
+
 |current_timestamp|
 |:--:|
 |2019-02-25 20:30:17.838263-03|
@@ -1503,6 +1543,7 @@ select extract(minute from current_timestamp);
 select extract(second from current_timestamp);
 ```
 Salida:
+
 |date_part|Tipo Dato|
 |:--:|:--:|
 |21|Century|
